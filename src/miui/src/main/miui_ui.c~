@@ -218,7 +218,7 @@ static int _miui_setbg_title(CANVAS *win, CANVAS *bg) {
   ag_textf(win,titW,elmP + 1,elmP+1,bg_title,acfg()->titlebg_g,0);
   ag_text(win,titW,elmP,elmP,bg_title,acfg()->titlefg,0);
   //draw battery
-  _miui_draw_battery(win, agw()/2 + 2*elmP, elmP, acfg()->titlefg, acfg()->titlebg_g);
+  _miui_draw_battery(win, agw()/2 + 8*elmP, elmP, acfg()->titlefg, acfg()->titlebg_g);
   //draw time
   snprintf(bg_title, 64, "%4d-%02d-%02d %02d:%02d", 1900+p->tm_year, p->tm_mon+1, p->tm_mday, (p->tm_hour + 8) % 24, p->tm_min);
   titW = ag_txtwidth(bg_title, 0);
