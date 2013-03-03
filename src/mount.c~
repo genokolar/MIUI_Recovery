@@ -165,36 +165,19 @@ static int umount_usb() {
         LOGE("Unable to write to ums lunfile 0 (%s)", strerror(errno));
         ret = -1;
     }
-    close(fd);
-
+    
 next:    
 	sprintf(lunfilename, "%s%d/file", acfg()->lun_file, 1);
     if ((fd = open(lunfilename, O_WRONLY)) < 0) 
     {
         LOGE("Unable to open ums lunfile 1 (%s)", strerror(errno));
         ret = -1;
-		goto next2;
-    }
-
-    if (write(fd, &ch, 1) < 0) 
-    {
-        LOGE("Unable to write to ums lunfile 1 (%s)", strerror(errno));
-        ret = -1;
-    }    
-    close(fd);
-
-next:    
-	sprintf(lunfilename, "%s/file", acfg()->lun_file);
-    if ((fd = open(lunfilename, O_WRONLY)) < 0) 
-    {
-        LOGE("Unable to open ums lunfile (%s)", strerror(errno));
-        ret = -1;
 		goto out;
     }
 
     if (write(fd, &ch, 1) < 0) 
     {
-        LOGE("Unable to write to ums lunfile (%s)", strerror(errno));
+        LOGE("Unable to write to ums lunfile 1 (%s)", strerror(errno));
         ret = -1;
     }    
     close(fd);
