@@ -42,7 +42,7 @@ batt.name=电池
 time.name=时间
 
 sd.install.name=从SD卡选择zip包安装
-sdext.install.name=从外置SD卡选择zip包安装
+sdext.install.name=从内置SD卡选择zip包安装
 sd.update.name=安装update.zip
 
 power.name=电源菜单

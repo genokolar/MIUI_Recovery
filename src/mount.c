@@ -88,7 +88,7 @@ static int mount_usb()
     int fd;
     char value[PROPERTY_VALUE_MAX];
     Volume *vol = volume_for_path("/sdcard");
-    Volume *vol_ext = volume_for_path("/external_sd");
+    Volume *vol_ext = volume_for_path("/emmc");
     char lunfilename[PATH_MAX];
 
     property_get("sys.usb.state", value, "");
@@ -183,7 +183,7 @@ next:
     }    
     close(fd);
 
-next:    
+next2:    
 	sprintf(lunfilename, "%s/file", acfg()->lun_file);
     if ((fd = open(lunfilename, O_WRONLY)) < 0) 
     {
@@ -221,7 +221,7 @@ intentResult* intent_toggle(int argc, char *argv[])
     {
         umount_usb();
         ensure_path_unmounted("/sdcard");
-        ensure_path_unmounted("/external_sd");
+        ensure_path_unmounted("/emmc");
         return miuiIntent_result_set(result, "ok");
     }
     //wait for usb connected
@@ -234,7 +234,7 @@ intentResult* intent_toggle(int argc, char *argv[])
     LOGE("USB not connect\n");
     umount_usb();
     ensure_path_unmounted("/sdcard");
-    ensure_path_unmounted("/external_sd");
+    ensure_path_unmounted("/emmc");
     return miuiIntent_result_set(result, "ok");
 }
 

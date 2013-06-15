@@ -39,7 +39,7 @@ batt.name=BATTARY
 time.name=TIME
 
 sd.install.name=choose zip from sd
-sdext.install.name=choose zip from external sd
+sdext.install.name=choose zip from internal sd
 sd.update.name=apply /sdcard/update.zip
 sd.log.save=Save Logs
 

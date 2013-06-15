@@ -34,12 +34,12 @@ typedef int u32;
 //rom_version
 #define MIUI_VERSION     "2.05"
 //rom date
-#define MIUI_BUILD       "2012-12-02"
+#define MIUI_BUILD       "2013-06-14"
 #define MIUI_BUILD_CN    "Weekend"
 #define MIUI_BUILD_L     "Dennis"
 #define MIUI_BUILD_A     "<yanhao@xiaomi.com>"
 #define MIUI_BUILD_URL   "http://www.micode.net/"
-#define MIUI_COPY        "(c) 2012 by xiaomi MIUI developers"
+#define MIUI_COPY        "(c) 2013 by xiaomi MIUI developers"
 
 //-- Temporary Dir - Move from /tmp/miui-data to /tmp/miui symlink to /tmp/miui-data for backward compatibility
 #define MIUI_SYSTMP      "/tmp"
