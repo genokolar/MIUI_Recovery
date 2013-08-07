@@ -217,12 +217,14 @@ void setup_data_media() {
     for (i = 0; i < num_volumes; i++) {
         Volume* vol = device_volumes + i;
         if (strcmp(vol->fs_type, "datamedia") == 0) {
+            LOGI("mount point [%s]\n", vol->mount_point);
             rmdir(vol->mount_point);
             mkdir("/data/media", 0755);
             symlink("/data/media", vol->mount_point);
             return;
         }
         if (strcmp(vol->fs_type, "datashare") == 0) {
+            LOGI("mount point [%s]\n", vol->mount_point);
             rmdir(vol->mount_point);
             mkdir("/data/share", 0755);
             symlink("/data/share", vol->mount_point);
